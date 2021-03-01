@@ -1,6 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
 # In[1]:
 
 
@@ -16,6 +13,7 @@ import torch.autograd as autograd
 import torch.nn.functional as F
 import sys
 import os
+from PIL import Image
 from os.path import join
 from common.wrappers import make_atari, wrap_deepmind, wrap_pytorch
 
@@ -216,7 +214,9 @@ for frame_idx in range(1, num_frames + 1):
     img = cv2.flip(img, 1)
     img = cv2.resize(img, (120, 120))
     path = train + str(episode_num) + "\\" + str(episode_dur) + '.png'
-    cv2.imwrite(path, img)
+    im_pil = Image.fromarray(img)
+    im_pil.save(path)
+    #cv2.imwrite(path, img)
     #plt.savefig(path)
     
     episode_dur += 1

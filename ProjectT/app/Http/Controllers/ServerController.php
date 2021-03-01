@@ -62,23 +62,23 @@ class ServerController extends Controller
             //     ''.$dir.'\\'.$id.''
             // ]);
 
+            // Log::info($command);
+
             $process = new Process([
-                'C:\\ProgramData\\Anaconda3\\python.exe',
+                'C:\ProgramData\Anaconda3\python.exe',
                 ''.$dir.'\\algoritmi_RL\\1.dqn.py',
-                ''.$dir.'\\'.$id.''], null, [
-                'APP_ENV' => false,
-                'SYMFONY_DOTENV_VARS' => false,
+                ''.$dir.'\\'.$id.''
             ]);
             $process->setOptions(['create_new_console' => true]);
             $process->start();
 
-            // $process->wait(function ($type, $buffer) {
-            //     if (Process::ERR === $type) {
-            //         Log::info('ERR > '.$buffer);
-            //     } else {
-            //         Log::info('OUT > '.$buffer);
-            //     }
-            // });
+            $process->wait(function ($type, $buffer) {
+                if (Process::ERR === $type) {
+                    Log::info('ERR > '.$buffer);
+                } else {
+                    Log::info('OUT > '.$buffer);
+                }
+            });
 
             echo $id;
         }
@@ -173,26 +173,5 @@ class ServerController extends Controller
 
             return $dataset;
         }
-    }
-
-    public function temp()
-    {
-        echo(implode(" ", [
-            'start "RL" /b C:\Users\enton\Anaconda3\python.exe',
-            'C:\\xampp\\htdocs\\algoritmi_RL\\1.dqn.py',
-            'C:\\xampp\\htdocs\\133'
-        ]));
-        $process = new Process(implode(" ", [
-            'start "RL" /b C:\Users\enton\Anaconda3\python.exe',
-            'C:\\xampp\\htdocs\\algoritmi_RL\\1.dqn.py',
-            'C:\\xampp\\htdocs\\133'
-        ]));
-        $process->start();
-
-        $pid = $process->getPid();
-        echo('pid = '.$pid);
-
-        //Taskkill /PID 26356 /F
-        //tasklist /fi "pid eq 4444"
     }
 }
