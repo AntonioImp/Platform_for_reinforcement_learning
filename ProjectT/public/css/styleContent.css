@@ -1,0 +1,314 @@
+body {
+    margin: 0px;
+    background-color: rgba(0, 0, 0, 0.3);
+    background-size: 100%;
+}
+
+@media (max-width:500px) {
+    body{
+        background-size: 700px 100%;
+    }
+}
+
+/* ----- barra in alto -----*/
+div{
+    margin: 0.2%;
+}
+
+#app{
+    margin: 0px;
+}
+
+.container h2 {
+    font-weight: bold;
+}
+
+nav.navbar.navbar-expand-md.navbar-light.bg-white.shadow-sm{
+    background-color: rgba(255, 255, 255, 0.85)!important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.py-4 {
+    padding-bottom: 1rem!important;
+    padding-top: 1rem!important;
+}
+
+div.card{
+    background-color: rgba(255, 255, 255, 0.75);
+    font-weight: bold;
+}
+
+div.col-md-8{
+    max-width: 54%;
+}
+
+a{
+    font-weight: bold;
+    font-size: 1.4em;
+}
+
+form{
+    text-align: right;
+}
+
+.nav-link{
+    cursor: pointer;
+}
+
+/* ---------- scelta gioco ---------- */
+.content {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 15%;
+    padding-right: 15%;
+}
+
+.content h1 {
+    white-space: nowrap;
+}
+
+#puls {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 20%;
+    font-size: 1.65em;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+#stop,
+#start {
+    border: solid;
+    -webkit-text-stroke-width: thick;
+    background-color: white;
+    width: 45%;
+    text-align: center;
+}
+
+#stop:hover,
+#start:hover {
+    background-color: #6cb2eb;
+    cursor: pointer;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+select {
+    width: 19%;
+    font-size: 1.65em;
+    font-weight: bold;
+    margin-left: 5%;
+}
+
+.error {
+    color: red;
+    white-space: nowrap;
+}
+
+/* ---------- grafici ---------- */
+.diagrams {
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+svg {
+    background-color: white;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+/* ---------- video ---------- */
+.video {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+    margin-left: 3%;
+    margin-right: 3%;
+    height: 34vh;
+    width: 94%;
+    z-index: 0;
+}
+
+.video img {
+    display: inline-block;
+    border: solid;
+    margin-top: 6px;
+    margin-bottom: 6px;
+    margin-left: 11px;
+    margin-right: 11px;
+    height: 120px;
+    width: 120px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.video .hidden {
+    display: none;
+}
+
+/* ---------- visualizza video ---------- */
+
+#modal-view {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 4;
+
+    display: flex;
+    justify-content: center;
+}
+
+#modal-view img {
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#modal-view.hidden {
+    display: none;
+}
+
+#modal-view h1{
+    color: white;
+    font-size: 1.8em;
+}
+
+#modal-view button{
+    width: 250px;
+    height: 40px;
+    border-radius: 25px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.no-scroll {
+    overflow: hidden;
+}
+
+.video-js {
+    margin: auto;
+    width: 80%;
+    height: 70%;
+}
+
+/* ---------- nascosto ---------- */
+
+.hidden {
+    display: none;
+}
+
+/* ---------- gestione vecchi allenamenti ---------- */
+
+#oldTraining {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 40px;
+}
+
+.raccolta {
+    height: 205px;
+    width: 205px;
+    border: 1.5px solid black;
+    border-radius: 20px;
+    margin: 10px;
+    margin-bottom: 45px;
+    background-color: white;
+}
+
+.raccolta:hover {
+    cursor: pointer;
+}
+
+.raccolta .del {
+    display: none;
+    height: 40px;
+    width: 40px;
+    margin-left: -40px;
+    text-align: right;
+    position: absolute;
+}
+
+.raccolta img {
+    height: 100%;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.raccolta h1 {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-wrap: break-word;
+    font-size: 2em;
+    text-align: center;
+}
+
+.raccolta h1:hover {
+    overflow: visible;
+    text-overflow: initial;
+    white-space: initial;
+    color: black;
+    position: relative;
+    z-index: 2;
+    border-radius: 25px;
+    background-color: rgba(255, 255, 255, 0.65);
+}
+
+#initial {
+    display: initial;
+}
+
+#empty {
+    margin: auto;
+    margin-top: 100px;
+}
+
+/* ---------- Conferma ---------- */
+
+#confirm {
+    display: block;
+    height: 150px;
+    width: 300px;
+    margin-top: 100px;
+    background-color: white;
+    text-align: center;
+}
+
+#confirm h2 {
+    margin: 20px;
+    font-weight: bold;
+}
+
+#confirm #check {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+#confirm #Y,
+#confirm #N {
+    font-weight: bold;
+    cursor: pointer;
+    width: 50px;
+}
+
+#confirm #Y:hover,
+#confirm #N:hover {
+    border: solid;
+    border-radius: 20px;
+    background-color: #ff4b46;
+}
